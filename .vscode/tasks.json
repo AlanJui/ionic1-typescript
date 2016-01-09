@@ -1,0 +1,22 @@
+{
+    "version": "0.1.0",
+    "command": "gulp",
+    "isShellCommand": true,
+    "args": [
+        "--no-color"
+    ],
+    "tasks": [
+      // {
+      //   "taskName": "compile",
+      //   "args": [],
+      //   "isBuildCommand": true,
+      //   "problemMatcher": "$tsc" 
+      // },
+      {
+        "taskName": "watch",
+        "isBuildCommand": true,
+        "showOutput": "silent",
+        "problemMatcher": "$tsc" 
+      }
+    ]
+}

@@ -6,22 +6,45 @@ var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
-var typescript = require('gulp-tsc');
+var tsc = require('gulp-tsc');
+var typescript = require('gulp-typescript');
+var tsProject = typescript.createProject('tsconfig.json');
+var sourceMaps = require('gulp-sourcemaps');
 
 var paths = {
   sass: ['./scss/**/*.scss'],
-  src: ['./src/*.ts'],
-  dest: './www/js/'
+  srcFiles: ['./src/**/*.ts'],
+  srcDir: './src',
+  destDir: './www/js/'
 };
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', 'compile']);
 
 gulp.task('compile', function() {
-  gulp.src(paths.src)
-    .pipe(typescript({
-      emitError: false
+  
+  var tsResult = gulp
+                  .src(paths.srcFiles)
+                  .pipe(sourceMaps.init())
+                  .pipe(typescript(tsProject));
+        
+  return tsResult.js
+          .pipe(sourceMaps.write('.'))
+          .pipe(gulp.dest(paths.destDir));
+});
+
+gulp.task('tsc', function() {
+  gulp.src(paths.srcFiles)
+    .pipe(tsc({
+      module: 'commonjs',
+      target: 'es5',
+      removeComments: true,
+      sourceMap: true,
+      declaration: true,
+      rootDir: './',
+      sourceRoot: '../../src',
+      outDir: paths.destDir
     }))
-    .pipe(gulp.dest(paths.dest));
+    .pipe(gulp.dest(paths.destDir));
 });
 
 gulp.task('sass', function(done) {

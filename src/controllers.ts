@@ -1,43 +1,54 @@
 /// <reference path="../typings/tsd.d.ts" />
+/// <reference path="./services.ts" />
 
-class DashCtrl {
-  constructor() {}
-}
+module starter.controllers {
+  
+  class DashCtrl {}
 
-class ChatsCtrl {
-  public $inject = ['Chats'];
-  chats: any[];
-  constructor(public Chats) {
-    this.chats = Chats.all();
+  class ChatsCtrl {
+    private chats: starter.services.IChatsUser[]; 
+    
+    static $inject = ['ChatsService'];
+    constructor(
+      private ChatsService: starter.services.IChatsService
+    ) {
+      this.chats = ChatsService.all();
+    }
+    public remove(chat: starter.services.IChatsUser): void {
+      this.ChatsService.remove(chat);
+    }
   }
-  remove(chat) {
-    this.Chats.remove(chat);
-  }
-}
 
-class ChatDetailCtrl {
-  public $inject = ['Chats', '$stateParams'];
-  chat: Object;
-  constructor(
-    public Chats: any,
-    public $stateParams: ng.ui.IStateParamsService
-  ) {
-    this.chat = Chats.get($stateParams.chatId);
+  interface IStateParams extends ng.ui.IStateParamsService {
+    chatId: string;
   }
-}
 
-interface ISettings {
-  enableFriends: Boolean;
-}
-class AccountCtrl {
-  public settings: ISettings;
-  constructor() {
-    this.settings.enableFriends = true;
+  class ChatDetailCtrl {
+    private chat: starter.services.IChatsUser;
+    
+    static $inject = ['ChatsService', '$stateParams'];
+    constructor(
+      private ChatsService: starter.services.ChatsService,
+      private $stateParams: IStateParams
+    ) {
+      this.chat = ChatsService.get($stateParams.chatId);
+    }
   }
-}
 
-angular.module('starter.controllers', [])
-  .controller('DashCtrl', DashCtrl)
-  .controller('ChatsCtrl', ChatsCtrl)
-  .controller('ChatDetailCtrl', ChatDetailCtrl)
-  .controller('AccountCtrl', AccountCtrl);
+  class AccountCtrl {
+    private settings: Object;
+    
+    constructor() {
+      this.settings = {
+        enableFriends: true
+      };
+    }
+  }
+
+  angular.module('starter.controllers', [])
+    .controller('DashCtrl', DashCtrl)
+    .controller('ChatsCtrl', ChatsCtrl)
+    .controller('ChatDetailCtrl', ChatDetailCtrl)
+    .controller('AccountCtrl', AccountCtrl);
+
+}

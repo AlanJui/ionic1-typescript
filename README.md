@@ -2,7 +2,6 @@
 
 ![](https://dl.dropboxusercontent.com/u/45512449/2016-01-10_19-44-32.png)
 
-## 專案簡介
 
 近日在網路上讀到一篇名為：《Ionic and TypeScript》的 Blog 分享文。該文章介紹：「如何將原來 ES5 JavaScript 程式碼撰寫的 Ionic App ，改以 TypeScript 進行開發」。這篇分享文，不僅有文章、程式碼，更有 YouTube 影片。
 
@@ -13,7 +12,7 @@
  
     [![示範影片](https://i.ytimg.com/vi_webp/kVegt2E72ww/default.webp)](https://www.youtube.com/watch?v=kVegt2E72ww)
 
-看到這篇文章，非常興奮，立即遵循文章及影片中的示範，跟著實作。然結果，非常不順利。因為我實作的結果，總跟影片示範的結果，有著極大的出入。搞不清楚是否因為作者使用的： VSCode Editor  、TSLint Rules 、TypeScript Transpiler (tsc) 有著「版本」、「設定」的差異，以致我會有如此不幸地遭遇。
+看到這篇文章，非常興奮，立即遵循文章及影片中的示範，跟著實作。然過程中非常不順利。因為我實作的產出，總跟影片示範的結果，有著極大的出入。搞不清楚問題的導因，是否因作者使用的： VSCode Editor  、TSLint Rules 、TypeScript Transpiler (tsc) 與我有著「版本」、「設定」的差異，以致會有如此不幸地遭遇。
 
 經過三天的卡關，及不斷地掙扎，最後終於能達成：「使用 TypeScript 改寫 Ionic App 」的心願。
 
@@ -144,7 +143,7 @@
 
 ### 安裝及設定 TypeScript 編譯工具
 
-為令 VSCode 能透過 TSLint 正確解譯 TypeScript 原始程式碼，使程式碼編輯的過程可以順利進行，不會被無謂的程式碼編輯錯誤所干擾。
+為令 VSCode 能透過 TSLint 正確解譯 TypeScript 原始程式碼，使程式碼編輯的過程可以順利進行，不會被無謂的「錯誤警示訊息」所干擾。
 
   1. 安裝 TypeScript 定義檔（Declaration File）
 
@@ -164,7 +163,7 @@
 
 以及能使用 Gulp 翻譯執行時所需的 ES5 JavaScript ，及產生 Debug 使需使用的 Source Map 檔案。
 
-  1. 安裝 TypeScript 定義檔（Declaration File）
+  1. 安裝 Gulp 所需使用的 NodeJS 模組
 
     ```
       $ npm install --save-dev gulp-tsc gulp-typescript gulp-sourcemaps
@@ -174,9 +173,9 @@
  
      可直接複製本處之 gulpfile 檔案。
 
-### App 程式開發
+### 程式碼改寫作業
 
-完成以上作業後，在依循以下
+完成以上作業後，再依循下列之作業程序，進行 ES5 JavaScript 改寫成 TypeScript 工作。
   
  1. 建置（Build）App
 

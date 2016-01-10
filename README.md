@@ -6,6 +6,11 @@
 
 近日在網路上讀到一篇名為：《Ionic and TypeScript》的 Blog 分享文。該文章介紹：「如何將原來 ES5 JavaScript 程式碼撰寫的 Ionic App ，改以 TypeScript 進行開發」。這篇分享文，不僅有文章、程式碼，更有 YouTube 影片。
 
+**【參考來源】：**
+
+ * [Blog 文章《Ionic and TypeScript》](http://blog.ionic.io/ionic-and-typescript-part-1/)
+ * [![示範影片](https://i.ytimg.com/vi_webp/kVegt2E72ww/default.webp)](https://www.youtube.com/watch?v=kVegt2E72ww)
+
 看到這篇文章，非常興奮，立即遵循文章及影片中的示範，跟著實作。然結果，非常不順利。經過三天的卡關、掙扎，最後終於能達成：「用 TypeScript 改寫」的目標。
 
 將個人實作的成果分享，朌望提供一個確實、可用的參考，讓有志使用 TypeScript 在 Ionic 開發 App 的同好們，有個好的開始基礎！

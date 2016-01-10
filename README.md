@@ -13,7 +13,9 @@
  
     [![示範影片](https://i.ytimg.com/vi_webp/kVegt2E72ww/default.webp)](https://www.youtube.com/watch?v=kVegt2E72ww)
 
-看到這篇文章，非常興奮，立即遵循文章及影片中的示範，跟著實作。然結果，非常不順利。經過三天的卡關、掙扎，最後終於能達成：「用 TypeScript 改寫」的目標。
+看到這篇文章，非常興奮，立即遵循文章及影片中的示範，跟著實作。然結果，非常不順利。因為我實作的結果，總跟影片示範的結果，有著極大的出入。搞不清楚是否因為作者使用的： VSCode Editor  、TSLint Rules 、TypeScript Transpiler (tsc) 有著「版本」、「設定」的差異，以致我會有如此不幸地遭遇。
+
+經過三天的卡關，及不斷地掙扎，最後終於能達成：「使用 TypeScript 改寫 Ionic App 」的心願。
 
 將個人實作的成果分享，朌望提供一個確實、可用的參考，讓有志使用 TypeScript 在 Ionic 開發 App 的同好們，有個好的開始基礎！
 
@@ -24,6 +26,7 @@
 ### 編輯器
 
  * VSCode (Vistual Studio Code) V0.10.6
+ 
  * VSCode Extenstion:
      - Angular 1 JavaScript and TypeScript Snippets V0.1.15
      - TSLint V0.5.4
@@ -39,6 +42,7 @@
  * typescript v1.7.5
  * tsd V0.6.5
  * tslint V3.2.1
+ * gulp (CLI) V3.9.0
 
 **【註】**：為使 VSCode 的程式編輯作業及 TSLint 的解譯（Inspect），能正確解讀，本專案停用了某些 TSLint Rule ，被停用的項目說明於文件底部的《需停用之 TSLint Rule》章節。
 

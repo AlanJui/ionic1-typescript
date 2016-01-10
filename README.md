@@ -10,6 +10,7 @@
 
  * [Blog 文章《Ionic and TypeScript》](http://blog.ionic.io/ionic-and-typescript-part-1/)
  * 示範影片
+ 
     [![示範影片](https://i.ytimg.com/vi_webp/kVegt2E72ww/default.webp)](https://www.youtube.com/watch?v=kVegt2E72ww)
 
 看到這篇文章，非常興奮，立即遵循文章及影片中的示範，跟著實作。然結果，非常不順利。經過三天的卡關、掙扎，最後終於能達成：「用 TypeScript 改寫」的目標。

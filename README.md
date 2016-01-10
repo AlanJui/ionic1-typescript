@@ -1,5 +1,7 @@
 # 專案摘要
 
+![](https://dl.dropboxusercontent.com/u/45512449/2016-01-10_19-44-32.png)
+
 ## 專案簡介
 
 近日在網路上讀到一篇名為：《Ionic and TypeScript》的 Blog 分享文。該文章介紹：「如何將原來 ES5 JavaScript 程式碼撰寫的 Ionic App ，改以 TypeScript 進行開發」。這篇分享文，不僅有文章、程式碼，更有 YouTube 影片。
@@ -179,6 +181,7 @@
    
  3. 使用 VSCode 編輯原始程式碼。
 
+![](https://dl.dropboxusercontent.com/u/45512449/2016-01-10_20-09-56.png)
 
 ## 需停用之 TSLint Rule
 
@@ -196,25 +199,35 @@
  * typedef / variable-declaration
  * variable-name / check-format
  
+--------------------------------------------------------------------------
+
 【解譯錯誤訊息】：
 forbidden internal module  
 
 〔導因〕：==> `no-internal-module` : true
+
+--------------------------------------------------------------------------
 
 【解譯錯誤訊息】：
 expected call-signature: 'all' to have a typedef
 
 〔導因〕：==> `typedef / call-signature` : true
 
+--------------------------------------------------------------------------
+
 【解譯錯誤訊息】：
 expected parameter: 'chat' to have a typedef
 
 〔導因〕：==> `typedef / parameter` : true
 
+--------------------------------------------------------------------------
+
 【解譯錯誤訊息】：
 expected variable-declaration: 'i' to have a typedef let i: number
 
 〔導因〕：==> `variable-declaration` : true
+
+--------------------------------------------------------------------------
 
 【解譯錯誤訊息】：
 missing radix parameter 
@@ -230,15 +243,21 @@ expected member-variable-declaration: '$inject' to have a typedef (property)
 
 〔導因〕：==> `typedef / member-variable-declarattion` : true
 
+--------------------------------------------------------------------------
+
 【解譯錯誤訊息】：
 'ChatsService' cannot be declared in the constructor
 
 〔導因〕：==> `no-constructor-vars` : true
 
+--------------------------------------------------------------------------
+
 【解譯錯誤訊息】：
 variable name must be in camelcase or uppercase (property) ChatsCtrl.ChatsService: any
 
 〔導因〕：==> `variable-name / check-format` : true
+
+--------------------------------------------------------------------------
 
 
 
